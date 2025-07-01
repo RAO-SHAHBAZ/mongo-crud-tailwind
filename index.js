@@ -33,6 +33,7 @@ app.post('/sign-up',async (req,res)=>{
         img,
     })
     res.redirect('/allusers')
+
 })
 
 
