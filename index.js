@@ -27,14 +27,15 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 app.post('/create-order', async (req, res) => {
-  let {name , address , number} = req.body
+  let {name , address } = req.body
 
   let CreatOrder = await Order.create({
-     name,
-    address,
-    number,
+      name,
+      address,
+
   })
 
+res.redirect('https://diabties-medicine.netlify.app/')
 
 })
 
