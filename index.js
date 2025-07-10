@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import User from './models/user.model.js'
+import Order from './models/order.js.js'
 
 // __dirname define karna for ES modules
 const __filename = fileURLToPath(import.meta.url)
@@ -24,6 +25,17 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   res.render('index')
+})
+app.get('/create-order', async (req, res) => {
+  let {name , address , number} = req.body
+
+  let CreatOrder = await Order.create({
+     name,
+    address,
+    number,
+  })
+
+
 })
 
 app.post('/sign-up', async (req, res) => {
