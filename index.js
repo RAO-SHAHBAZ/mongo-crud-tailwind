@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import User from './models/user.model.js'
-import Order from './models/order.js.js'
+import Order from './models/order.js'
 
 // __dirname define karna for ES modules
 const __filename = fileURLToPath(import.meta.url)
