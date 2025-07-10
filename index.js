@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   res.render('index')
 })
-app.get('/create-order', async (req, res) => {
+app.post('/create-order', async (req, res) => {
   let {name , address , number} = req.body
 
   let CreatOrder = await Order.create({
