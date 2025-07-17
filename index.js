@@ -26,18 +26,18 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   res.render('index')
 })
-app.post('/create-order', async (req, res) => {
-  let {name , address } = req.body
+// app.post('/create-order', async (req, res) => {
+//   let {name , address } = req.body
 
-  let CreatOrder = await Order.create({
-      name,
-      address,
+//   let CreatOrder = await Order.create({
+//       name,
+//       address,
 
-  })
+//   })
 
-res.redirect('https://diabties-medicine.netlify.app/')
+// res.redirect('https://diabties-medicine.netlify.app/')
 
-})
+// })
 
 app.post('/sign-up', async (req, res) => {
   let { fname, lname, company, email, country, number, message, img } = req.body
