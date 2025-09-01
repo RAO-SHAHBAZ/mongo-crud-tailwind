@@ -59,6 +59,13 @@ app.get('/allusers', async (req, res) => {
   res.render('allusers', { users })
 })
 
+
+app.get('/api/allusers', async (req, res) => {
+  let users = await User.find()
+  res.json(users)
+})
+
+
 app.get('/delete/:id', async (req, res) => {
   await User.findOneAndDelete({ _id: req.params.id })
   res.redirect('/allusers')
